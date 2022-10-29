@@ -17,18 +17,22 @@ const users = [
 ];
 
 app.get('/users', (req, res) => {
-    res.send(users);
+    if (req.query.name) {
+        // filter by query
+        const search = req.query.name;
+        const filter = users.filter(usr => usr.name.toLowerCase().indexOf(search) >= 0);
+        res.send(filter);
+    } else {
+        res.send(users);
+    }
 });
 
 app.post('/users', (req, res) => {
-    console.log('Post Api called');
     const user = req.body;
     user.id = users.length + 1;
     users.push(user);
     console.log(user);
     res.send(user);
-
-    console.log(req.body);
 });
 
 app.listen(port, () => {
