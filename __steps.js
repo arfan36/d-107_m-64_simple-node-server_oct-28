@@ -20,3 +20,13 @@ https://www.youtube.com/watch?v=GGo3MVBFr1A?name=arfan&email=arfanur01@gamil.com
 4. database> connect> show entire code
 5. npm i mongodb
  */
+
+/* 
+Insert: 
+
+ */
+
+/* 
+find:
+
+ */
